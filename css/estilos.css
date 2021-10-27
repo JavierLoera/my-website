@@ -414,6 +414,10 @@ textarea {
     .cursor {
         opacity: 1;
     }
+    .home_img>img {
+
+    height: 500px;
+}
     .about>div>div {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
