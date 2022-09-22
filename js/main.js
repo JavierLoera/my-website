@@ -70,3 +70,39 @@ if (innerWidth > 760) {
 		hoverOutTarget(i[a]);
 	}
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+	const swiper = new Swiper(".mySwiper", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		slidesPerGroup: 2,
+		allowTouchMove: true,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+			bulletClass: 'swiper-pagination-bullet',
+		},
+		breakpoints: {
+			500: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 20,
+			},
+		},
+	});
+
+
+
+})

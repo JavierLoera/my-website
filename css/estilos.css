@@ -5,8 +5,14 @@
     --black: #000000;
     --moradoSec: #6f1fff;
     --morado: #2f1e4e;
+    --moradoT:#181822;
     --rosa: #ff388a;
 }
+*{
+    box-sizing: border-box;
+
+}
+
 
 html,
 body {
@@ -17,6 +23,11 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+background-color: #181822;
+}
+
+a{
+    text-decoration: none;
 }
 
 h1,
@@ -90,7 +101,7 @@ h6 {
 /*inicio*/
 
 .home {
-    background: var(--morado);
+    background: var(--black);
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -100,15 +111,18 @@ h6 {
 }
 
 .home_img {
-    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 130px;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
 }
 
 .home_img>img {
-    margin-top: 80px;
-    border-radius: 30px;
-    width: 100%;
+    margin-top: 80px 80px;
+    border-radius: 20%;
+    width:300px;
     height: auto;
 }
 
@@ -118,14 +132,16 @@ h6 {
 }
 
 .home_title>h1 {
-    font-family: "Work Sans", sans-serif;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
     color: var(--white);
     text-align: center;
     font-size: 8.5vw;
 }
 
 .home_title>h1>span {
-    font-family: "Crimson Text", serif;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
     padding: 5px;
     margin-top: 5px;
     display: block;
@@ -135,9 +151,9 @@ h6 {
 
 
 /*about*/
-
 .about {
-    background: var(--white);
+    background: var(--moradoT);
+    color: var(--white);
     height: auto;
     padding-top: 7rem;
     padding-bottom: 7rem;
@@ -151,6 +167,8 @@ h6 {
 }
 
 .about>div>div>h2 {
+    font-family: 'Roboto',sans-serif;
+    font-weight: 900;
     color: var(--moradoSec);
     font-size: clamp(1.5rem, 10vw, 4rem);
 }
@@ -161,124 +179,86 @@ h6 {
 }
 
 .about>div>div>div>p {
-    color: var(--black);
+    font-family: 'Roboto',sans-serif;
+    font-weight: 100;
     font-size: 7vw;
     line-height: 14vw;
     padding-top: 3vw;
     margin: 1rem;
     padding: 5px;
-    font-weight: 500;
 }
 
 .btn_cv {
     width: 100%;
     font-size: 5vw;
-    align-self: center;
-    justify-self: center;
+    text-align: center;
     color: var(--moradoSec);
 }
 
+/* Oswald 600  Roboto 100 700 900 */
 
 /*proyectos*/
-
-.projectos_section {
-    flex-direction: column;
-    background-color: var(--white);
-    width: 100vw;
-    height: auto;
-    margin-top: 20px;
-    display: flex;
+#slider-section{
+    z-index: 1000;
+    max-width: 1200px;
+    width:90%;
+    margin: 50px auto;
 }
-
-.projects-grid {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 8px;
-    margin-top: 40px;
+#slider-section h2{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.5rem, 10vw, 4rem);
+    color: var(--rosa);
+    letter-spacing: 1px;
 }
-
-.projectos_section>h2 {
-    font-size: 7.5vw;
-    color: var(--moradoSec);
+.slider-box{
     width: 100%;
-    height: 5vw;
-    margin-bottom: 20px;
-    align-self: center;
-    text-align: center;
-}
-
-.projects-card {
     height: 450px;
-    background-color: var(--white);
-    margin: 20px 10px 10px 10px;
-    border: 1px solid var(--black);
-    box-shadow: 11px 11px 23px -11px rgba(0, 0, 0, 0.93);
+    background-color: #242435;
+    padding: 10px;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+.slider-box-img{
+    width: 100%;
+    display: flex;
+    height: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.slider-box-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.slider-box-text{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px 15px;
+    padding-bottom: 5px;
 }
-
-.img-project {
-    height: 60%;
-    width: 100%;
-}
-
-.img-project>img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.container-btn_titulo {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    width: 100%;
-    height: 40%;
-}
-
-.container-btn_titulo>h2 {
+.slider-box-text a{
+    color: #ffffff;
+    font-size: 1.2rem;
     font-weight: 600;
-    padding: 5px;
-    width: 50%;
-    height: 40px;
-    color: var(--moradoSec);
+    letter-spacing: 0.3px;
+}
+.slider_footer {
+    width: 100%;
+    color:var(--rosa);
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
 }
 
-.btn {
-    height: clamp(25px, 34px, 70px);
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.btn_proj {
-    width: 25%;
-    font-size: 0.9rem;
-    background-color: var(--morado);
-    border-radius: 7px;
-    padding-top: 14px;
-    margin: 5px;
-    color: var(--white);
-    transition: transform 0.15s;
-    position: relative;
-    z-index: 1;
-}
-
-.btn_proj:after {
-    content: "";
-    background-color: var(--morado);
-    transition: transform 0.15s;
-    border-radius: 7px;
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-}
-
-.btn_proj:hover::after {
-    transform: scale(1.1);
+.slider_footer div i{
+    display: flex;
+    display: inline;
+    font-size: 20px;
 }
 
 
@@ -369,6 +349,11 @@ textarea {
 }
 
 @media (max-width: 700px) and (orientation: landscape) {
+    .swiper-pagination-bullet{
+        background-color: var(--white);
+        width: 20px;
+        height: 20px;
+    }
     .cursor {
         opacity: -1;
     }
@@ -405,18 +390,21 @@ textarea {
         line-height: 5vw;
         padding: 10px;
     }
-    .btn_proj {
-        padding-top: 0px;
-    }
 }
 
 @media (min-width: 1024px) and (max-width: 2950px) {
+
+    .swiper-pagination-bullet{
+        background-color: var(--white);
+        width: 20px;
+        height: 20px;
+    }
+
     .cursor {
         opacity: 1;
     }
     .home_img>img {
-
-    height: 600px;
+    height: 400px;
 }
     .about>div>div {
         display: grid;
@@ -437,16 +425,13 @@ textarea {
         margin: 2rem;
         padding: 20px;
     }
-    .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+
+    .btn_cv {
+        width: 100%;
+        font-size: 5vw;
+        align-self: center;
+        justify-self: center;
+        color: var(--moradoSec);
     }
-    .projects-card {
-        margin-top: 20px;
-        height: 650px;
-    }
-    .btn_proj {
-        padding: 10px;
-        font-size: 20px;
-        width: 30%;
-    }
+
 }
